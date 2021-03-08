@@ -1,0 +1,18 @@
+{
+  "type": "postgres",
+  "host": "postgresql-22481-0.cloudclusters.net",
+  "port": 22528,
+  "username": "nha2021",
+  "password": "nha10121999",
+  "database": "quan-ly-giay",
+  "logging": true,
+  "synchronize": true,
+  "uuidExtension":true,
+  "autoSchemaSync":true,
+  "entities": [ "dist/**/*.entity.js"],
+  "migrations": ["dist/migrations/*.js"],
+  "subscribers": ["dist/subscriber/*.js"],
+  "cli": {
+    "migrationsDir": "dist/database/migrations"
+  }
+}
