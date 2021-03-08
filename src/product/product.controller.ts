@@ -19,6 +19,7 @@ import { ProductService } from './product.service';
   query: {
     join: {
       danhMucSanPham: {},
+      nhaCungCap: {}
     },
   },
 })

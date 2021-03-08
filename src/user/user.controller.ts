@@ -5,7 +5,7 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { Crud } from '@nestjsx/crud';
 import { UserEntity } from './user.entity';
 
-// @UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard)
 @ApiBearerAuth('token')
 @Crud({
   model: { type: UserEntity },

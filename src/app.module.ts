@@ -1,3 +1,4 @@
+import { NhaCungCapModule } from './nha-cung-cap/nha-cung-cap.module';
 import { AvatarModule } from './avatar/avatar.module';
 import { AuthModule } from './auth/auth.module';
 import { Module } from '@nestjs/common';
@@ -19,7 +20,9 @@ import { DmSanphamModule } from './dm-san-pham/dm-san-pham.module';
     WorkshiftModule,
     AvatarModule,
     ProductModule,
-    DmSanphamModule],
+    DmSanphamModule,
+    NhaCungCapModule,
+  ],
   controllers: [AppController],
   providers: [
     AppService,

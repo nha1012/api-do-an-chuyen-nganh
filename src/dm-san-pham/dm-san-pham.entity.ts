@@ -21,5 +21,5 @@ export class DmSanPhamEntity {
   tenDanhMuc: string;
 
   @OneToMany(() => ProductEntity, product => product.danhMucSanPham)
-  products: DmSanPhamEntity[];
+  products: ProductEntity[];
 }

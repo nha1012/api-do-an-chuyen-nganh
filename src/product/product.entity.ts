@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjsx/crud/lib/crud';
 import { IsEmail, IsNotEmpty, IsString, Length } from 'class-validator';
 import { DmSanPhamEntity } from 'src/dm-san-pham/dm-san-pham.entity';
+import { NhaCungCapEntity } from 'src/nha-cung-cap/nha-cung-cap.entity';
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
@@ -40,7 +41,7 @@ export class ProductEntity {
   danhMucSanPhamId: string;
 
   @JoinColumn({ name: 'DanhMucSanPhamId' })
-  @ManyToOne(() => DmSanPhamEntity, dmSanPham => dmSanPham.danhMucSanPhamId)
+  @ManyToOne(() => DmSanPhamEntity, dmSanPham => dmSanPham.products)
   danhMucSanPham: DmSanPhamEntity;
 
   @CreateDateColumn({ name: 'CreateDate' })
@@ -57,8 +58,10 @@ export class ProductEntity {
   @Column({ name: 'NhaCungCapId', nullable: true, type: 'uuid' })
   @ApiProperty({ description: 'NhaCungCapId' })
   nhaCungCapId: string;
+  @JoinColumn({ name: 'NhaCungCapId' })
+  @ManyToOne(() => NhaCungCapEntity, nhaCungCap => nhaCungCap.products)
+  nhaCungCap: NhaCungCapEntity
 
-  // nha cung cap entity
   // Orderentity []
 
   @ApiProperty({ description: 'Danh mục sản phẩm Id' })

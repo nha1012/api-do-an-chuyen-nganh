@@ -2,14 +2,14 @@ import { Controller, UseGuards } from '@nestjs/common';
 import { Crud } from '@nestjsx/crud';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { DmSanPhamService } from './dm-san-pham.service';
-import { DmSanPhamEntity } from './dm-san-pham.entity';
+import { NhaCungCapEntity } from './nha-cung-cap.entity';
+import { NhaCungCapService } from './nha-cung-cap.service';
 @UseGuards(JwtAuthGuard)
 @Crud({
-  model: { type: DmSanPhamEntity },
+  model: { type: NhaCungCapEntity },
   params: {
     id: {
-      field: 'danhMucSanPhamId',
+      field: 'nhaCungCapId',
       primary: true,
       type: 'uuid',
     },
@@ -21,8 +21,8 @@ import { DmSanPhamEntity } from './dm-san-pham.entity';
   },
 })
 @ApiBearerAuth('token')
-@ApiTags('Danh mục sản phẩm')
-@Controller('danh-muc-san-pham')
-export class DmSanPhamController {
-  constructor(public service: DmSanPhamService) { }
+@ApiTags('Nhà cung cấp')
+@Controller('nha-cung-cap')
+export class NhaCungCapController {
+  constructor(public service: NhaCungCapService) { }
 }
