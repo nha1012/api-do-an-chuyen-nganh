@@ -1,5 +1,6 @@
 import { Controller, Request, Post, UseGuards, HttpCode, Body } from '@nestjs/common';
 import { ApiBody, ApiOkResponse, ApiParam, ApiTags } from '@nestjs/swagger';
+import { AdminGuard } from 'src/guard/admin.guard';
 import { UserEntity } from 'src/user/user.entity';
 import { hash } from 'src/utils/auth.util';
 import { AuthService } from './auth.service';

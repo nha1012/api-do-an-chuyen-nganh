@@ -15,6 +15,9 @@ import { HinhAnhSanPhamModule } from './ha-san-pham/ha-san-pham.module';
 import { ChuongTrinhKhuyenMaiModule } from './chuong-trinh-khuyen-mai/chuong-trinh-khuyen-mai.module';
 import { OrderModule } from './order/order.module';
 import { TransactionModule } from './transaction/transaction.module';
+import { APP_GUARD } from '@nestjs/core';
+import { AdminGuard } from './guard/admin.guard';
+import { EmployeeGuard } from './guard/employee.guard';
 
 @Module({
   imports: [
@@ -35,7 +38,7 @@ import { TransactionModule } from './transaction/transaction.module';
   ],
   controllers: [AppController],
   providers: [
-    AppService,
+    AppService
   ],
 })
 export class AppModule { }
