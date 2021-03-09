@@ -7,6 +7,7 @@ import { hash } from 'src/utils/auth.util';
 import { RoleEntity } from 'src/role/role.entity';
 import { WorkshiftEntity } from 'src/workshift/workshift.entity';
 import { AvatarEntity } from 'src/avatar/avatar.entity';
+import { TransactionEntity } from 'src/transaction/transaction.entity';
 
 @Entity()
 export class UserEntity {
@@ -68,7 +69,7 @@ export class UserEntity {
   roleId: string;
 
   @JoinColumn({ name: 'RoleId' })
-  @ManyToOne(() => RoleEntity, role => role.roleId)
+  @ManyToOne(() => RoleEntity, role => role.users)
   role: RoleEntity;
 
 
@@ -83,4 +84,7 @@ export class UserEntity {
   @JoinColumn({ name: 'AvatarId' })
   @OneToOne(() => AvatarEntity, avatar => avatar.avatarId)
   avatar: AvatarEntity;
+
+  @OneToMany(() => TransactionEntity, transaction => transaction.user)
+  transations: TransactionEntity[]
 }

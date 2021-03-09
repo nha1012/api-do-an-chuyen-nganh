@@ -1,0 +1,40 @@
+import { ApiProperty } from "@nestjs/swagger";
+import { IsNumber } from "class-validator";
+import { ProductEntity } from "src/product/product.entity";
+import { TransactionEntity } from "src/transaction/transaction.entity";
+import { BeforeInsert, Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+
+@Entity()
+export class OrderEntity {
+  @PrimaryGeneratedColumn('uuid', { name: 'OrderId' })
+  orderId: string;
+
+  @Column({ type: 'uuid', name: "ProductId" })
+  @ApiProperty({ description: 'ProductId' })
+  productId: string;
+
+  @JoinColumn({ name: 'ProductId' })
+  @ManyToOne(() => ProductEntity, product => product.orders)
+  product: ProductEntity;
+
+  @Column({ type: 'uuid', name: "TranSactionId", nullable: false })
+  @ApiProperty({ description: 'TranSactionId' })
+  tranSactionId: string;
+
+  @JoinColumn({ name: 'TranSactionId' })
+  @ManyToOne(() => TransactionEntity, transaction => transaction.orders)
+  transaction: TransactionEntity;
+
+  @Column({ type: 'boolean', name: "Status", default: false, insert: false })
+  @ApiProperty({ description: 'Status' })
+  status: boolean;
+
+  @Column({ type: 'int', name: "Qty" })
+  @ApiProperty({ description: 'Qty' })
+  qty: number;
+
+  @Column({ type: 'float', name: "TongTien", insert: false, nullable: true })
+  @ApiProperty({ description: 'TongTien' })
+  tongTien: number;
+
+}
