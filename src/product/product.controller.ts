@@ -5,7 +5,6 @@ import { Crud } from '@nestjsx/crud';
 import { ProductEntity } from './product.entity';
 import { ProductService } from './product.service';
 
-@UseGuards(JwtAuthGuard)
 @ApiBearerAuth('token')
 @Crud({
   model: { type: ProductEntity },
