@@ -18,6 +18,7 @@ import { TransactionModule } from './transaction/transaction.module';
 import { APP_GUARD } from '@nestjs/core';
 import { AdminGuard } from './guard/admin.guard';
 import { EmployeeGuard } from './guard/employee.guard';
+import { BaoCaoThongKeModule } from './bao-cao-thong-ke/bao-cao-thong-ke.module';
 
 @Module({
   imports: [
@@ -34,7 +35,8 @@ import { EmployeeGuard } from './guard/employee.guard';
     HinhAnhSanPhamModule,
     ChuongTrinhKhuyenMaiModule,
     OrderModule,
-    TransactionModule
+    TransactionModule,
+    BaoCaoThongKeModule,
   ],
   controllers: [AppController],
   providers: [

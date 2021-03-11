@@ -5,8 +5,6 @@ import { Crud } from '@nestjsx/crud';
 import { TransactionService } from './transaction.service';
 import { TransactionEntity } from './transaction.entity';
 
-@UseGuards(JwtAuthGuard)
-@ApiBearerAuth('token')
 @Crud({
   model: { type: TransactionEntity },
   params: {
@@ -22,6 +20,9 @@ import { TransactionEntity } from './transaction.entity';
       orders: {}
     },
   },
+  routes: {
+    exclude: ['getManyBase']
+  }
 })
 @ApiTags('Transaction')
 @Controller('transaction')

@@ -5,8 +5,6 @@ import { Crud } from '@nestjsx/crud';
 import { ReviewSanPhamService } from './review-san-pham.service';
 import { ReviewSanPhamEntity } from './review-san-pham.entity';
 
-@UseGuards(JwtAuthGuard)
-@ApiBearerAuth('token')
 @Crud({
   model: { type: ReviewSanPhamEntity },
   params: {

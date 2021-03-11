@@ -8,4 +8,7 @@ export class OrderService extends TypeOrmCrudService<OrderEntity> {
   constructor(@InjectRepository(OrderEntity) repo) {
     super(repo);
   }
+  getBaoBaoThongKe(req) {
+    return this.repo.find(req);
+  }
 }
