@@ -22,6 +22,6 @@ export class ChuongTrinhKhuyenMaiEntity {
   @ApiProperty({ description: 'Phần trăm giảm giá' })
   phamTramGiamGia: number;
 
-  @OneToMany(() => ProductEntity, product => product.chuongTrinhKhuyenMai)
+  @OneToMany(() => ProductEntity, product => product.chuongTrinhKhuyenMai, { cascade: true, onDelete: 'CASCADE' })
   products: ProductEntity[]
 }
