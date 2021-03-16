@@ -32,7 +32,7 @@ export class ProductEntity {
 
   @ApiProperty({ description: 'Mô tả' })
   @IsString()
-  @Column({ length: 255, type: 'varchar', name: 'MoTa', nullable: true })
+  @Column({ type: 'varchar', name: 'MoTa', nullable: true })
   moTa: string;
 
   @ApiProperty({ description: 'Số Lượng' })
