@@ -4,6 +4,7 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { Crud } from '@nestjsx/crud';
 import { HaSanPhamService } from './ha-san-pham.service';
 import { HaSanPhamEntity } from './ha-san-pham.entity';
+import * as Cloudinary from 'cloudinary';
 
 @UseGuards(JwtAuthGuard)
 @ApiBearerAuth('token')
@@ -25,5 +26,5 @@ import { HaSanPhamEntity } from './ha-san-pham.entity';
 @ApiTags('Hinh anh sản phẩm')
 @Controller('Ha-san-pham')
 export class HaSanPhamController {
-  constructor(public service: HaSanPhamService) { }
+    constructor(public service: HaSanPhamService) { }
 }

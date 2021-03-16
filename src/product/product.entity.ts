@@ -77,10 +77,10 @@ export class ProductEntity {
   @ManyToOne(() => ChuongTrinhKhuyenMaiEntity, chuongTrinhKhuyenMai => chuongTrinhKhuyenMai.products)
   chuongTrinhKhuyenMai: ChuongTrinhKhuyenMaiEntity;
 
-  @OneToMany(() => ReviewSanPhamEntity, reviewSanPham => reviewSanPham.product)
+  @OneToMany(() => ReviewSanPhamEntity, reviewSanPham => reviewSanPham.product, { cascade: true, onDelete: 'CASCADE' })
   reviewSanPhams: ReviewSanPhamEntity[]
-  @OneToMany(() => HaSanPhamEntity, haSanPham => haSanPham.product)
+  @OneToMany(() => HaSanPhamEntity, haSanPham => haSanPham.product, { cascade: true, onDelete: 'CASCADE' })
   hinhAnhSanPhams: HaSanPhamEntity[]
-  @OneToMany(() => OrderEntity, order => order.product)
+  @OneToMany(() => OrderEntity, order => order.product, { cascade: false, onDelete: 'CASCADE' })
   orders: HaSanPhamEntity[]
 }
