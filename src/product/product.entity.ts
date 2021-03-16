@@ -82,5 +82,5 @@ export class ProductEntity {
   @OneToMany(() => HaSanPhamEntity, haSanPham => haSanPham.product, { cascade: true, onDelete: 'CASCADE' })
   hinhAnhSanPhams: HaSanPhamEntity[]
   @OneToMany(() => OrderEntity, order => order.product, { cascade: true, onDelete: 'CASCADE' })
-  orders: HaSanPhamEntity[]
+  orders: OrderEntity[]
 }

@@ -14,7 +14,7 @@ export class OrderEntity {
   productId: string;
 
   @JoinColumn({ name: 'ProductId' })
-  @ManyToOne(() => ProductEntity, product => product.orders)
+  @ManyToOne(() => ProductEntity, product => product.orders, { onDelete: 'CASCADE' })
   product: ProductEntity;
 
   @Column({ type: 'uuid', name: "TranSactionId", nullable: false })

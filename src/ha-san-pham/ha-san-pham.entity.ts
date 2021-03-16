@@ -13,7 +13,7 @@ export class HaSanPhamEntity {
   productId: string
 
   @JoinColumn({ name: 'ProductId' })
-  @ManyToOne(() => ProductEntity, product => product.hinhAnhSanPhams)
+  @ManyToOne(() => ProductEntity, product => product.hinhAnhSanPhams, { onDelete: 'CASCADE' })
   product: ProductEntity;
 
   @Column({ type: 'varchar', name: "Url" })
