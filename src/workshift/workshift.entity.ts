@@ -26,7 +26,7 @@ export class WorkshiftEntity {
   @ApiProperty({ description: 'Id người dùng', required: true })
   userId: string;
 
-  @Column({ type: 'boolean', name: 'Status', nullable: true, default: false })
+  @Column({ type: 'boolean', name: 'Status', nullable: true, default: false, insert: false })
   @IsDate()
   @ApiProperty({ description: 'Status', required: true })
   status: boolean;
