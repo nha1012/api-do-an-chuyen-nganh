@@ -20,19 +20,19 @@ export class TransactionEntity {
   @ManyToOne(() => UserEntity, user => user.transations)
   user: UserEntity
 
-  @Column({ type: 'float', name: "TongTien" })
+  @Column({ type: 'float', name: "TongTien", nullable: true })
   @ApiProperty({ description: 'TongTien' })
   tongTien: number;
 
-  @Column({ type: 'varchar', name: "Payment" })
+  @Column({ type: 'varchar', name: "Payment", nullable: true })
   @ApiProperty({ description: 'Payment' })
   payment: string;
 
-  @Column({ type: 'varchar', name: "Message" })
+  @Column({ type: 'varchar', name: "Message", nullable: true })
   @ApiProperty({ description: 'Message' })
   message: string;
 
-  @Column({ type: 'int', name: "Qty" })
+  @Column({ type: 'int', name: "Qty", nullable: true })
   @ApiProperty({ description: 'Qty' })
   qty: number;
   @CreateDateColumn()
