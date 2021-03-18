@@ -33,7 +33,7 @@ export class OrderEntity {
   @ApiProperty({ description: 'Qty' })
   qty: number;
 
-  @Column({ type: 'float', name: "TongTien", nullable: true })
+  @Column({ type: 'float', name: "TongTien", default: 0 })
   @ApiProperty({ description: 'TongTien' })
   tongTien: number;
 
