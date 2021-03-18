@@ -19,7 +19,7 @@ export class OrderEntity {
 
   @Column({ type: 'uuid', name: "TranSactionId", nullable: false })
   @ApiProperty({ description: 'TranSactionId' })
-  tranSactionId: string;
+  transactionId: string;
 
   @JoinColumn({ name: 'TranSactionId' })
   @ManyToOne(() => TransactionEntity, transaction => transaction.orders)
