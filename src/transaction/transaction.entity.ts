@@ -12,7 +12,7 @@ export class TransactionEntity {
   @ApiProperty({ description: 'Status' })
   status: boolean;
 
-  @Column({ type: 'uuid', name: "UserId" })
+  @Column({ type: 'uuid', name: "UserId", nullable: true })
   @ApiProperty({ description: 'UserId' })
   userId: string;
 
@@ -20,7 +20,7 @@ export class TransactionEntity {
   @ManyToOne(() => UserEntity, user => user.transations)
   user: UserEntity
 
-  @Column({ type: 'float', name: "TongTien", insert: false })
+  @Column({ type: 'float', name: "TongTien" })
   @ApiProperty({ description: 'TongTien' })
   tongTien: number;
 
@@ -33,7 +33,7 @@ export class TransactionEntity {
   message: string;
 
   @Column({ type: 'int', name: "Qty" })
-  @ApiProperty({ description: 'Status' })
+  @ApiProperty({ description: 'Qty' })
   qty: number;
   @CreateDateColumn()
   createDate: Date;
