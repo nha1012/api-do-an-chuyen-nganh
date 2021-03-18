@@ -17,11 +17,11 @@ export class OrderEntity {
   @ManyToOne(() => ProductEntity, product => product.orders, { onDelete: 'CASCADE' })
   product: ProductEntity;
 
-  @Column({ type: 'uuid', name: "TranSactionId", nullable: false })
-  @ApiProperty({ description: 'TranSactionId' })
+  @Column({ type: 'uuid', name: "TransactionId", nullable: false })
+  @ApiProperty({ description: 'TransactionId' })
   transactionId: string;
 
-  @JoinColumn({ name: 'TranSactionId' })
+  @JoinColumn({ name: 'TransactionId' })
   @ManyToOne(() => TransactionEntity, transaction => transaction.orders)
   transaction: TransactionEntity;
 
@@ -33,7 +33,7 @@ export class OrderEntity {
   @ApiProperty({ description: 'Qty' })
   qty: number;
 
-  @Column({ type: 'float', name: "TongTien", insert: false, nullable: true })
+  @Column({ type: 'float', name: "TongTien", nullable: true })
   @ApiProperty({ description: 'TongTien' })
   tongTien: number;
 
