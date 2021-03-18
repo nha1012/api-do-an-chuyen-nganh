@@ -12,7 +12,7 @@ export class AvatarEntity {
   userId: string;
 
   @JoinColumn({ name: 'UserId' })
-  @OneToOne(() => UserEntity, user => user.userId)
+  @OneToOne(() => UserEntity, user => user.userId, { onDelete: 'CASCADE' })
   user: UserEntity;
 
 

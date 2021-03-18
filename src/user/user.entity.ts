@@ -82,9 +82,9 @@ export class UserEntity {
   avatarId: string;
 
   @JoinColumn({ name: 'AvatarId' })
-  @OneToOne(() => AvatarEntity, avatar => avatar.avatarId)
+  @OneToOne(() => AvatarEntity, avatar => avatar.avatarId, { cascade: true, onDelete: 'CASCADE' })
   avatar: AvatarEntity;
 
-  @OneToMany(() => TransactionEntity, transaction => transaction.user)
+  @OneToMany(() => TransactionEntity, transaction => transaction.user, { cascade: true, onDelete: 'SET NULL' })
   transations: TransactionEntity[]
 }

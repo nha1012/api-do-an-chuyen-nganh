@@ -8,7 +8,7 @@ export class TransactionEntity {
   @PrimaryGeneratedColumn('uuid', { name: 'TransactionId' })
   transactionId: string;
 
-  @Column({ type: 'boolean', name: "Status", default: false, insert: false })
+  @Column({ type: 'boolean', name: "Status", default: false })
   @ApiProperty({ description: 'Status' })
   status: boolean;
 
@@ -17,7 +17,7 @@ export class TransactionEntity {
   userId: string;
 
   @JoinColumn({ name: 'UserId' })
-  @ManyToOne(() => UserEntity, user => user.transations)
+  @ManyToOne(() => UserEntity, user => user.transations, { onDelete: 'SET NULL' })
   user: UserEntity
 
   @Column({ type: 'float', name: "TongTien", nullable: true })
