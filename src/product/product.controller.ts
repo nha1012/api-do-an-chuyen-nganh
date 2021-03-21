@@ -21,7 +21,8 @@ import { ProductService } from './product.service';
       nhaCungCap: {},
       reviewSanPhams: {},
       hinhAnhSanPhams: {},
-      chuongTrinhKhuyenMai: {}
+      chuongTrinhKhuyenMai: {},
+      orders: {}
     },
   },
 })
