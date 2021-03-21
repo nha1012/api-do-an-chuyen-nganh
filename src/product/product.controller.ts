@@ -20,10 +20,10 @@ import { ProductService } from './product.service';
       danhMucSanPham: {},
       nhaCungCap: {},
       reviewSanPhams: {},
-      'reviewSanPhams.user': {},
       hinhAnhSanPhams: {},
       chuongTrinhKhuyenMai: {},
-      orders: {}
+      orders: {},
+      'reviewSanPhams.user': {},
     },
   },
 })
