@@ -17,6 +17,7 @@ import { ReviewSanPhamEntity } from './review-san-pham.entity';
   query: {
     join: {
       product: {},
+      user: {}
     },
   },
 })
