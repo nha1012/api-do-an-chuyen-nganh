@@ -17,7 +17,7 @@ export class ReviewSanPhamEntity {
   @ManyToOne(() => ProductEntity, product => product.reviewSanPhams, { onDelete: 'CASCADE' })
   product: ProductEntity;
 
-  @Column({ type: 'uuid', nullable: false, name: 'UserId' })
+  @Column({ type: 'uuid', name: 'UserId' })
   @ApiProperty({ description: 'UserId' })
   userId: string
 
