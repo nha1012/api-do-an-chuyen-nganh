@@ -21,7 +21,7 @@ export class ReviewSanPhamEntity {
   @ApiProperty({ description: 'UserId' })
   userId: string
 
-  @JoinColumn({ name: 'ProductId' })
+  @JoinColumn({ name: 'UserId' })
   @ManyToOne(() => UserEntity, user => user.reviewSanPhams, { onDelete: 'CASCADE' })
   user: UserEntity;
 
