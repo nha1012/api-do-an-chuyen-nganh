@@ -24,6 +24,10 @@ export class ProductEntity {
   @IsNotEmpty()
   @Column({ type: 'float', name: 'GiaSanPham', nullable: false })
   giaSanPham: number;
+  @ApiProperty({ description: 'Trạng thái', required: true })
+  @IsNotEmpty()
+  @Column({ type: 'boolean', name: 'Status', default: false, insert: false })
+  status: boolean;
 
   @ApiProperty({ description: 'Giá Khuyến Mãi' })
   @IsNotEmpty()
