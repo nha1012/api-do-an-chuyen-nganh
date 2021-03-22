@@ -4,6 +4,7 @@ import { CrudRequest } from '@nestjsx/crud';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { EntityManager, FindManyOptions } from 'typeorm';
 import { TransactionEntity } from './transaction.entity';
+import * as lodash from 'lodash';
 
 @Injectable()
 export class TransactionService extends TypeOrmCrudService<TransactionEntity> {
@@ -11,13 +12,8 @@ export class TransactionService extends TypeOrmCrudService<TransactionEntity> {
     super(repo);
   }
 
-  async get(req: CrudRequest): Promise<any> {
+  async getThongKe(req: CrudRequest): Promise<any> {
 
-    const builder = await this.createBuilder(req.parsed, req.options)
-    const result = await builder
-      .from('transaction_entity', 'te')
-      .select('te.TongTien', 'tongTien')
-    return result.execute();
   }
 
 }

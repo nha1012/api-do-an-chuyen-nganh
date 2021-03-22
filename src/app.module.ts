@@ -15,7 +15,6 @@ import { HinhAnhSanPhamModule } from './ha-san-pham/ha-san-pham.module';
 import { ChuongTrinhKhuyenMaiModule } from './chuong-trinh-khuyen-mai/chuong-trinh-khuyen-mai.module';
 import { OrderModule } from './order/order.module';
 import { TransactionModule } from './transaction/transaction.module';
-import { BaoCaoThongKeModule } from './bao-cao-thong-ke/bao-cao-thong-ke.module';
 
 @Module({
   imports: [
@@ -33,7 +32,6 @@ import { BaoCaoThongKeModule } from './bao-cao-thong-ke/bao-cao-thong-ke.module'
     ChuongTrinhKhuyenMaiModule,
     OrderModule,
     TransactionModule,
-    BaoCaoThongKeModule,
   ],
   controllers: [AppController],
   providers: [
