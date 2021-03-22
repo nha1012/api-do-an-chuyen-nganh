@@ -19,9 +19,6 @@ import { TransactionEntity } from './transaction.entity';
       user: {},
       orders: {}
     },
-  },
-  routes: {
-    exclude: ['getManyBase']
   }
 })
 @ApiTags('Transaction')
