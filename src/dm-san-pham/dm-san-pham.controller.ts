@@ -16,6 +16,7 @@ import { DmSanPhamEntity } from './dm-san-pham.entity';
   query: {
     join: {
       products: {},
+      danhMucCha: {}
     },
   },
 })
