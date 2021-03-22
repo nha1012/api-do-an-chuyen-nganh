@@ -13,7 +13,7 @@ export class DmSanPhamEntity {
   danhMucChaId: string;
 
   @JoinColumn({ name: 'DanhMucChaId' })
-  @OneToMany(() => DmSanPhamEntity, dmSanPham => dmSanPham.danhMucCha)
+  @OneToMany(() => DmSanPhamEntity, dmSanPham => dmSanPham.danhMucChaId)
   danhMucCha: DmSanPhamEntity;
 
   @Column({ name: 'TenDanhMuc', type: 'varchar', nullable: false })
