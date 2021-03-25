@@ -13,7 +13,19 @@ export class TransactionService extends TypeOrmCrudService<TransactionEntity> {
   }
 
   async getThongKe(req: CrudRequest): Promise<any> {
+    const date = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    const query = this.repo.createQueryBuilder('a')
+    query.where('a.createDate < :date', { date })
+    // const querySt =
+    const data = await query.getMany();
 
+    // data.filter(tranSaction => tranSaction.createDate < date)
+    // // const data = await query.getMany()
+    // // const values = await this.getMany(req) as TransactionEntity[];
+    // // const result = { datas: [] };
+    console.log(data);
+
+    return data;
   }
 
 }

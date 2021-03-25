@@ -17,7 +17,7 @@ export class OrderEntity {
   @ManyToOne(() => ProductEntity, product => product.orders, { onDelete: 'CASCADE' })
   product: ProductEntity;
 
-  @Column({ type: 'uuid', name: "TransactionId", nullable: false })
+  @Column({ type: 'uuid', name: "TransactionId", nullable: true })
   @ApiProperty({ description: 'TransactionId' })
   transactionId: string;
 
