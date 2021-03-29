@@ -12,6 +12,10 @@ export class DmSanPhamEntity {
   @ApiProperty({ description: 'Tên Danh Mục' })
   tenDanhMuc: string;
 
+  @Column({ name: 'Url', type: 'varchar', nullable: true })
+  @ApiProperty({ description: 'Hinh anh danh muc' })
+  url: string;
+
   @OneToMany(() => ProductEntity, product => product.danhMucSanPham)
   products: ProductEntity[];
 }
