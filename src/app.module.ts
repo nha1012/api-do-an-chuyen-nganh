@@ -15,6 +15,8 @@ import { HinhAnhSanPhamModule } from './ha-san-pham/ha-san-pham.module';
 import { ChuongTrinhKhuyenMaiModule } from './chuong-trinh-khuyen-mai/chuong-trinh-khuyen-mai.module';
 import { OrderModule } from './order/order.module';
 import { TransactionModule } from './transaction/transaction.module';
+import { AttributesModule } from './attributes/attributes.module';
+import { AttributeValueModule } from './attribute-value/attribute-value.module';
 
 @Module({
   imports: [
@@ -32,6 +34,8 @@ import { TransactionModule } from './transaction/transaction.module';
     ChuongTrinhKhuyenMaiModule,
     OrderModule,
     TransactionModule,
+    AttributesModule,
+    AttributeValueModule,
   ],
   controllers: [AppController],
   providers: [

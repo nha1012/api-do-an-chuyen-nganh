@@ -20,7 +20,6 @@ export class ProductEntity {
   @Column({ length: 100, type: 'varchar', name: 'TenSanPham', nullable: false })
   tenSanPham: string;
 
-
   @ApiProperty({ description: 'Giá Sản Phẩm', required: true })
   @IsNotEmpty()
   @Column({ type: 'float', name: 'GiaSanPham', nullable: false })
@@ -70,8 +69,6 @@ export class ProductEntity {
   @JoinColumn({ name: 'NhaCungCapId' })
   @ManyToOne(() => NhaCungCapEntity, nhaCungCap => nhaCungCap.products)
   nhaCungCap: NhaCungCapEntity
-
-  // Orderentity []
 
   @ApiProperty({ description: 'Chương trình khuyến mãi Id' })
   @Column({ type: 'uuid', name: 'ChuongTrinhKhuyenMaiId', nullable: true })

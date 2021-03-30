@@ -6,7 +6,7 @@
   "password": "nha10121999",
   "database": "quan-ly-giay",
   "logging": false,
-  "synchronize": false,
+  "synchronize": true,
   "uuidExtension":true,
   "autoSchemaSync":true,
   "entities": [ "dist/**/*.entity.js"],

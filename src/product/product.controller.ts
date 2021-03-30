@@ -18,6 +18,7 @@ import { ProductService } from './product.service';
   query: {
     join: {
       danhMucSanPham: {},
+      attributeValues: {},
       nhaCungCap: {},
       reviewSanPhams: {},
       hinhAnhSanPhams: {},
