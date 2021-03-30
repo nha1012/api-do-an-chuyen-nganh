@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjsx/crud/lib/crud';
 import { IsEmail, IsNotEmpty, IsString, Length } from 'class-validator';
+import { AttributeValueEntity } from 'src/attribute-value/attribute-value.entity';
 import { ChuongTrinhKhuyenMaiEntity } from 'src/chuong-trinh-khuyen-mai/chuong-trinh-khuyen-mai.entity';
 import { DmSanPhamEntity } from 'src/dm-san-pham/dm-san-pham.entity';
 import { HaSanPhamEntity } from 'src/ha-san-pham/ha-san-pham.entity';
@@ -82,9 +83,14 @@ export class ProductEntity {
   chuongTrinhKhuyenMai: ChuongTrinhKhuyenMaiEntity;
 
   @OneToMany(() => ReviewSanPhamEntity, reviewSanPham => reviewSanPham.product, { cascade: true, onDelete: 'CASCADE' })
+  // Review sản phẩm
   reviewSanPhams: ReviewSanPhamEntity[]
   @OneToMany(() => HaSanPhamEntity, haSanPham => haSanPham.product, { cascade: true, onDelete: 'CASCADE' })
+  // Hinh ảnh sản phẩm
   hinhAnhSanPhams: HaSanPhamEntity[]
   @OneToMany(() => OrderEntity, order => order.product, { cascade: true, onDelete: 'CASCADE' })
   orders: OrderEntity[]
+  // Atrribute select
+  @OneToMany(() => AttributeValueEntity, attributeValue => attributeValue.product)
+  attributeValues: AttributeValueEntity[]
 }
