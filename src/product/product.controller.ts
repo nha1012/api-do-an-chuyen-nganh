@@ -25,6 +25,7 @@ import { ProductService } from './product.service';
       chuongTrinhKhuyenMai: {},
       orders: {},
       'reviewSanPhams.user': {},
+      'attributeValues.attributes': {},
     },
   },
 })
