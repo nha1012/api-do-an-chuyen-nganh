@@ -25,7 +25,7 @@ export class OrderEntity {
   @ManyToOne(() => TransactionEntity, transaction => transaction.orders)
   transaction: TransactionEntity;
 
-  @Column({ type: 'boolean', name: "Status", default: false, insert: false })
+  @Column({ type: 'boolean', name: "Status", default: false })
   @ApiProperty({ description: 'Status' })
   status: boolean;
 
