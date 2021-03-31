@@ -18,7 +18,7 @@ import { ChuongTrinhKhuyenMaiEntity } from './chuong-trinh-khuyen-mai.entity';
   },
   query: {
     join: {
-      products: {},
+      chuongTrinhKhuyenMaiValues: {},
     },
   },
 })

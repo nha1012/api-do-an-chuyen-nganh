@@ -22,10 +22,11 @@ import { ProductService } from './product.service';
       nhaCungCap: {},
       reviewSanPhams: {},
       hinhAnhSanPhams: {},
-      chuongTrinhKhuyenMai: {},
+      chuongTrinhKhuyenMaiValues: {},
       orders: {},
       'reviewSanPhams.user': {},
       'attributeValues.attributes': {},
+      'chuongTrinhKhuyenMaiValues.chuongTrinhKhuyenMai': {},
     },
   },
 })

@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsNumber } from "class-validator";
-import { ProductEntity } from "src/product/product.entity";
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { ChuongTrinhKhuyenMaiValueEntity } from "src/chuong-trinh-khuyen-mai-value/chuong-trinh-khuyen-mai-value.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class ChuongTrinhKhuyenMaiEntity {
@@ -17,11 +17,10 @@ export class ChuongTrinhKhuyenMaiEntity {
   @ApiProperty({ description: 'EndDate' })
   endDate: Date;
 
+  @Column({ type: 'varchar', name: "TenChuongTrinh" })
+  @ApiProperty({ description: 'Tên chương trình khuyến mãi' })
+  tenChuongTrinh: string;
 
-  @Column({ type: 'int', name: "PhanTramGiamGia" })
-  @ApiProperty({ description: 'Phần trăm giảm giá' })
-  phamTramGiamGia: number;
-
-  @OneToMany(() => ProductEntity, product => product.chuongTrinhKhuyenMai, { cascade: true, onDelete: 'CASCADE' })
-  products: ProductEntity[]
+  @OneToMany(() => ChuongTrinhKhuyenMaiValueEntity, ctkmvl => ctkmvl.chuongTrinhKhuyenMai)
+  chuongTrinhKhuyenMaiValues: ChuongTrinhKhuyenMaiValueEntity[];
 }

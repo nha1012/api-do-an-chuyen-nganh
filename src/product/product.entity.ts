@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjsx/crud/lib/crud';
 import { IsEmail, IsNotEmpty, IsString, Length } from 'class-validator';
 import { AttributeValueEntity } from 'src/attribute-value/attribute-value.entity';
+import { ChuongTrinhKhuyenMaiValueEntity } from 'src/chuong-trinh-khuyen-mai-value/chuong-trinh-khuyen-mai-value.entity';
 import { ChuongTrinhKhuyenMaiEntity } from 'src/chuong-trinh-khuyen-mai/chuong-trinh-khuyen-mai.entity';
 import { DmSanPhamEntity } from 'src/dm-san-pham/dm-san-pham.entity';
 import { HaSanPhamEntity } from 'src/ha-san-pham/ha-san-pham.entity';
@@ -70,15 +71,6 @@ export class ProductEntity {
   @ManyToOne(() => NhaCungCapEntity, nhaCungCap => nhaCungCap.products)
   nhaCungCap: NhaCungCapEntity
 
-  @ApiProperty({ description: 'Chương trình khuyến mãi Id' })
-  @Column({ type: 'uuid', name: 'ChuongTrinhKhuyenMaiId', nullable: true })
-  chuongTrinhKhuyenMaiId: string;
-  // chuong trinh khuyen mai entit]
-
-  @JoinColumn({ name: 'ChuongTrinhKhuyenMaiId' })
-  @ManyToOne(() => ChuongTrinhKhuyenMaiEntity, chuongTrinhKhuyenMai => chuongTrinhKhuyenMai.products)
-  chuongTrinhKhuyenMai: ChuongTrinhKhuyenMaiEntity;
-
   @OneToMany(() => ReviewSanPhamEntity, reviewSanPham => reviewSanPham.product, { cascade: true, onDelete: 'CASCADE' })
   // Review sản phẩm
   reviewSanPhams: ReviewSanPhamEntity[]
@@ -90,4 +82,7 @@ export class ProductEntity {
   // Atrribute select
   @OneToMany(() => AttributeValueEntity, attributeValue => attributeValue.product)
   attributeValues: AttributeValueEntity[]
+
+  @OneToMany(() => ChuongTrinhKhuyenMaiValueEntity, ctkmvl => ctkmvl.chuongTrinhKhuyenMai)
+  chuongTrinhKhuyenMaiValues: ChuongTrinhKhuyenMaiValueEntity[];
 }
