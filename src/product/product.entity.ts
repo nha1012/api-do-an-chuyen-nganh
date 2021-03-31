@@ -83,6 +83,6 @@ export class ProductEntity {
   @OneToMany(() => AttributeValueEntity, attributeValue => attributeValue.product)
   attributeValues: AttributeValueEntity[]
 
-  @OneToMany(() => ChuongTrinhKhuyenMaiValueEntity, ctkmvl => ctkmvl.chuongTrinhKhuyenMai)
+  @OneToMany(() => ChuongTrinhKhuyenMaiValueEntity, ctkmvl => ctkmvl.product)
   chuongTrinhKhuyenMaiValues: ChuongTrinhKhuyenMaiValueEntity[];
 }
