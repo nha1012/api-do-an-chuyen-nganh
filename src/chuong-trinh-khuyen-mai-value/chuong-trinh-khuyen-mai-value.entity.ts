@@ -25,5 +25,7 @@ export class ChuongTrinhKhuyenMaiValueEntity {
   @ManyToOne(() => ProductEntity, product => product.chuongTrinhKhuyenMaiValues)
   product: ProductEntity;
 
-
+  @Column({ type: 'float', name: "GiaKhuyenMai" })
+  @ApiProperty({ description: 'GiaKhuyenMai' })
+  giaKhuyenMai: number;
 }
