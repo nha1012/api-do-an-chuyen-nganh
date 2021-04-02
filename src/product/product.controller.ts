@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query, Request, UseGuards } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { Crud } from '@nestjsx/crud';
@@ -34,4 +34,13 @@ import { ProductService } from './product.service';
 @Controller('product')
 export class ProductController {
   constructor(public service: ProductService) { }
+  @Get('thong-ke-sp-ton-kho')
+  getThongKeSPTonKho() {
+    return this.service.getThongKeSPTonKho();
+  }
+  @Get('thong-ke-st-ton-kho')
+  getThongKeSTTonKho() {
+    return this.service.getThongKeSTTonKho();
+  }
+
 }
