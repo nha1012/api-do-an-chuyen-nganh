@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
+import { Controller, Get, Query, UseGuards } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { Crud } from '@nestjsx/crud';
@@ -26,4 +26,8 @@ import { ChuongTrinhKhuyenMaiEntity } from './chuong-trinh-khuyen-mai.entity';
 @Controller('chuong-trinh-khuyen-mai')
 export class ChuongTrinhKhuyenMaiController {
   constructor(public service: ChuongTrinhKhuyenMaiService) { }
+  @Get('thong-ke')
+  getThongKe(@Query() params) {
+    return this.service.getThongKe(params);
+  }
 }
