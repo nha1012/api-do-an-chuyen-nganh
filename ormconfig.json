@@ -5,7 +5,7 @@
   "username": "nha2021",
   "password": "nha10121999",
   "database": "quan-ly-giay",
-  "logging": false,
+  "logging": true,
   "synchronize": true,
   "uuidExtension":true,
   "autoSchemaSync":true,

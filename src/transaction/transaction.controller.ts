@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Request, UseGuards, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, Req, Request, UseGuards, UseInterceptors } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { Crud, CrudRequestInterceptor, ParsedRequest } from '@nestjsx/crud';
@@ -25,9 +25,9 @@ import { TransactionEntity } from './transaction.entity';
 @Controller('transaction')
 export class TransactionController {
   constructor(public service: TransactionService) { }
+
   @Get('thong-ke')
-  @UseInterceptors(new CrudRequestInterceptor())
-  getThongKe(@Request() @ParsedRequest() req) {
-    return this.service.getThongKe(req);
+  getThongKe(@Query() params) {
+    return this.service.getThongKe(params);
   }
 }

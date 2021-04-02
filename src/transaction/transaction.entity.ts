@@ -43,3 +43,9 @@ export class TransactionEntity {
   orders: OrderEntity[]
 
 }
+
+
+export enum TypeTGBaoCao {
+  TUAN = 'TUAN',
+  THANG = 'THANG',
+}
