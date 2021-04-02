@@ -7,5 +7,5 @@ export interface SeriesInterface {
   value?: number;
 }
 export interface ResponseStatistics {
-  datas: Array<TypeBaoCaoInterface>
+  datas: Array<TypeBaoCaoInterface | SeriesInterface>
 }

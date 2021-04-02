@@ -17,6 +17,7 @@ export class TransactionService extends TypeOrmCrudService<TransactionEntity> {
 
   async getThongKe(params: { startDate: Date, endDate: Date }): Promise<any> {
     const { startDate, endDate } = params
+    let baoCaos: TypeBaoCaoInterface[] = []
     const tranSactions = await getManager()
       .createQueryBuilder(TransactionEntity, "transaction")
       .where(`transaction.createDate BETWEEN '${startDate}' AND '${endDate}'`)
@@ -24,7 +25,6 @@ export class TransactionService extends TypeOrmCrudService<TransactionEntity> {
       .leftJoinAndSelect('orders.product', 'product')
       .addOrderBy('transaction.createDate', 'DESC')
       .getMany();
-
     const result: ResponseStatistics = { datas: [] };
     const gPayment = _.groupBy(tranSactions, v => v.payment);// Groupbyy phuong thuc thanh toan
     for (const key in gPayment) {
