@@ -4,7 +4,10 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { Crud } from '@nestjsx/crud';
 import { ProductEntity } from './product.entity';
 import { ProductService } from './product.service';
-
+import { EmployeeGuard } from 'src/guard/employee.guard';
+import { AdminGuard } from 'src/guard/admin.guard';
+@UseGuards(EmployeeGuard)
+@UseGuards(JwtAuthGuard)
 @ApiBearerAuth('token')
 @Crud({
   model: { type: ProductEntity },
@@ -34,10 +37,12 @@ import { ProductService } from './product.service';
 @Controller('product')
 export class ProductController {
   constructor(public service: ProductService) { }
+  @UseGuards(AdminGuard)
   @Get('thong-ke-sp-ton-kho')
   getThongKeSPTonKho() {
     return this.service.getThongKeSPTonKho();
   }
+  @UseGuards(AdminGuard)
   @Get('thong-ke-st-ton-kho')
   getThongKeSTTonKho() {
     return this.service.getThongKeSTTonKho();
