@@ -5,7 +5,8 @@ import { TransactionService } from './transaction.service';
 import { TransactionEntity } from './transaction.entity';
 import { AdminGuard } from 'src/guard/admin.guard';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-@UseGuards(AdminGuard)
+import { EmployeeGuard } from 'src/guard/employee.guard';
+@UseGuards(EmployeeGuard)
 @UseGuards(JwtAuthGuard)
 @ApiBearerAuth('token')
 @Crud({
