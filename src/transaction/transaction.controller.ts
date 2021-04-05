@@ -6,9 +6,7 @@ import { TransactionEntity } from './transaction.entity';
 import { AdminGuard } from 'src/guard/admin.guard';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { EmployeeGuard } from 'src/guard/employee.guard';
-@UseGuards(EmployeeGuard)
-@UseGuards(JwtAuthGuard)
-@ApiBearerAuth('token')
+
 @Crud({
   model: { type: TransactionEntity },
   params: {
@@ -25,6 +23,10 @@ import { EmployeeGuard } from 'src/guard/employee.guard';
     },
   }
 })
+
+@UseGuards(JwtAuthGuard)
+@UseGuards(EmployeeGuard)
+@ApiBearerAuth('token')
 @ApiTags('Transaction')
 @Controller('transaction')
 export class TransactionController {
