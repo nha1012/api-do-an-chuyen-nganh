@@ -5,7 +5,8 @@ import { Crud } from '@nestjsx/crud';
 import { ProductEntity } from './product.entity';
 import { ProductService } from './product.service';
 import { EmployeeGuard } from 'src/guard/employee.guard';
-@UseGuards(EmployeeGuard)
+import { AdminGuard } from 'src/guard/admin.guard';
+@UseGuards(AdminGuard)
 @UseGuards(JwtAuthGuard)
 @ApiBearerAuth('token')
 @Crud({
@@ -32,6 +33,9 @@ import { EmployeeGuard } from 'src/guard/employee.guard';
     },
   },
 })
+
+
+@ApiTags('Product')
 @Controller('product')
 export class ProductController {
   constructor(public service: ProductService) { }
