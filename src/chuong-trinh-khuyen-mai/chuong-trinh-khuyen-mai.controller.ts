@@ -4,6 +4,7 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { Crud } from '@nestjsx/crud';
 import { ChuongTrinhKhuyenMaiService } from './chuong-trinh-khuyen-mai.service';
 import { ChuongTrinhKhuyenMaiEntity } from './chuong-trinh-khuyen-mai.entity';
+import { AdminGuard } from 'src/guard/admin.guard';
 
 @UseGuards(JwtAuthGuard)
 @ApiBearerAuth('token')
@@ -26,6 +27,8 @@ import { ChuongTrinhKhuyenMaiEntity } from './chuong-trinh-khuyen-mai.entity';
 @Controller('chuong-trinh-khuyen-mai')
 export class ChuongTrinhKhuyenMaiController {
   constructor(public service: ChuongTrinhKhuyenMaiService) { }
+
+  @UseGuards(AdminGuard)
   @Get('thong-ke')
   getThongKe(@Query() params) {
     return this.service.getThongKe(params);
