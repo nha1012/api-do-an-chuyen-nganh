@@ -30,8 +30,6 @@ import { EmployeeGuard } from 'src/guard/employee.guard';
 @Controller('transaction')
 export class TransactionController {
   constructor(public service: TransactionService) { }
-
-  @UseGuards(AdminGuard)
   @Get('thong-ke')
   getThongKe(@Query() params) {
     return this.service.getThongKe(params);

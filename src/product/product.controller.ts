@@ -6,8 +6,9 @@ import { ProductEntity } from './product.entity';
 import { ProductService } from './product.service';
 import { EmployeeGuard } from 'src/guard/employee.guard';
 import { AdminGuard } from 'src/guard/admin.guard';
-@UseGuards(AdminGuard)
+
 @UseGuards(JwtAuthGuard)
+@UseGuards(AdminGuard)
 @ApiBearerAuth('token')
 @Crud({
   model: { type: ProductEntity },
