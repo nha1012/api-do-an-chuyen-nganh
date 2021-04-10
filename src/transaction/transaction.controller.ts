@@ -23,6 +23,8 @@ import { EmployeeGuard } from 'src/guard/employee.guard';
       user: {},
       orders: {},
       'orders.product':{},
+      'orders.product.nhaCungCap':{},
+      'orders.product.danhMucSanPham':{},
     },
   }
 })
