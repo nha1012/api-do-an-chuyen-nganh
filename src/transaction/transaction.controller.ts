@@ -21,7 +21,8 @@ import { EmployeeGuard } from 'src/guard/employee.guard';
   query: {
     join: {
       user: {},
-      orders: {}
+      orders: {},
+      'orders.product':{},
     },
   }
 })
