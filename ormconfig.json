@@ -1,10 +1,10 @@
 {
   "type": "postgres",
-  "host": "postgresql-26844-0.cloudclusters.net",
-  "port": 26880,
+  "host": "postgresql-30278-0.cloudclusters.net",
+  "port": 30278,
   "username": "nha2021",
   "password": "nha10121999",
-  "database": "quan-ly-qiay",
+  "database": "quan-ly-giay",
   "logging": true,
   "synchronize": true,
   "uuidExtension": true,
