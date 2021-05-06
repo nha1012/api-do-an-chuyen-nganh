@@ -18,7 +18,7 @@ export class AttributeValueEntity {
   productId: string;
 
   @JoinColumn({ name: 'ProductId' })
-  @ManyToOne(() => ProductEntity, product => product.attributeValues)
+  @ManyToOne(() => ProductEntity, product => product.attributeValues, { onDelete: 'CASCADE' })
   product: ProductEntity;
 
   @Column({ name: 'AttributesId', type: 'uuid', nullable: false })
@@ -26,7 +26,7 @@ export class AttributeValueEntity {
   attributesId: string;
 
   @JoinColumn({ name: 'AttributesId' })
-  @ManyToOne(() => AttributesEntity, attributes => attributes.attributeValues)
+  @ManyToOne(() => AttributesEntity, attributes => attributes.attributeValues, {onDelete: 'CASCADE' })
   attributes: AttributesEntity;
 
   @CreateDateColumn()

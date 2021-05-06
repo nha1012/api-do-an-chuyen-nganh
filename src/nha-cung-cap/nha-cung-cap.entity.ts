@@ -25,6 +25,6 @@ export class NhaCungCapEntity {
   address: string;
 
 
-  @OneToMany(() => ProductEntity, product => product.nhaCungCap)
+  @OneToMany(() => ProductEntity, product => product.nhaCungCap,{ onDelete: 'CASCADE' })
   products: ProductEntity[];
 }

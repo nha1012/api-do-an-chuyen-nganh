@@ -22,7 +22,7 @@ export class OrderEntity {
   transactionId: string;
 
   @JoinColumn({ name: 'TransactionId' })
-  @ManyToOne(() => TransactionEntity, transaction => transaction.orders)
+  @ManyToOne(() => TransactionEntity, transaction => transaction.orders, { onDelete: 'CASCADE' })
   transaction: TransactionEntity;
 
   @Column({ type: 'boolean', name: "Status", default: false })

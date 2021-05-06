@@ -39,7 +39,7 @@ export class TransactionEntity {
   createDate: Date;
   @UpdateDateColumn()
   updateDate: Date;
-  @OneToMany(() => OrderEntity, order => order.transaction)
+  @OneToMany(() => OrderEntity, order => order.transaction, { cascade: true, onDelete: 'CASCADE' })
   orders: OrderEntity[]
 
 }

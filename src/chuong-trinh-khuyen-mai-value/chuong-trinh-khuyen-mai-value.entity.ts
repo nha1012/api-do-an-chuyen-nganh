@@ -22,7 +22,7 @@ export class ChuongTrinhKhuyenMaiValueEntity {
   productId: string;
 
   @JoinColumn({ name: 'ProductId' })
-  @ManyToOne(() => ProductEntity, product => product.chuongTrinhKhuyenMaiValues)
+  @ManyToOne(() => ProductEntity, product => product.chuongTrinhKhuyenMaiValues, { cascade: true, onDelete: 'CASCADE' })
   product: ProductEntity;
 
   @Column({ type: 'float', name: "GiaKhuyenMai" })

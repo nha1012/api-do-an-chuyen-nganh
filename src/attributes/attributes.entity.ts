@@ -17,6 +17,6 @@ export class AttributesEntity {
   @UpdateDateColumn()
   updateDate: Date;
 
-  @OneToMany(() => AttributeValueEntity, attributeValue => attributeValue.attributes)
+  @OneToMany(() => AttributeValueEntity, attributeValue => attributeValue.attributes, { cascade: true, onDelete: 'CASCADE' })
   attributeValues: AttributeValueEntity[];
 }

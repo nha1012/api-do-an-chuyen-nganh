@@ -67,7 +67,7 @@ export class ProductEntity {
   @ApiProperty({ description: 'NhaCungCapId' })
   nhaCungCapId: string;
   @JoinColumn({ name: 'NhaCungCapId' })
-  @ManyToOne(() => NhaCungCapEntity, nhaCungCap => nhaCungCap.products)
+  @ManyToOne(() => NhaCungCapEntity, nhaCungCap => nhaCungCap.products, { cascade: true, onDelete: 'CASCADE' })
   nhaCungCap: NhaCungCapEntity
 
   @OneToMany(() => ReviewSanPhamEntity, reviewSanPham => reviewSanPham.product, { cascade: true, onDelete: 'CASCADE' })
@@ -79,9 +79,9 @@ export class ProductEntity {
   @OneToMany(() => OrderEntity, order => order.product, { cascade: true, onDelete: 'CASCADE' })
   orders: OrderEntity[]
   // Atrribute select
-  @OneToMany(() => AttributeValueEntity, attributeValue => attributeValue.product)
+  @OneToMany(() => AttributeValueEntity, attributeValue => attributeValue.product,{ cascade: true, onDelete: 'CASCADE' })
   attributeValues: AttributeValueEntity[]
 
-  @OneToMany(() => ChuongTrinhKhuyenMaiValueEntity, ctkmvl => ctkmvl.product)
+  @OneToMany(() => ChuongTrinhKhuyenMaiValueEntity, ctkmvl => ctkmvl.product,{ cascade: true, onDelete: 'CASCADE' })
   chuongTrinhKhuyenMaiValues: ChuongTrinhKhuyenMaiValueEntity[];
 }

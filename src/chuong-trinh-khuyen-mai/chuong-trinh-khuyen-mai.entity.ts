@@ -21,6 +21,6 @@ export class ChuongTrinhKhuyenMaiEntity {
   @ApiProperty({ description: 'Tên chương trình khuyến mãi' })
   tenChuongTrinh: string;
 
-  @OneToMany(() => ChuongTrinhKhuyenMaiValueEntity, ctkmvl => ctkmvl.chuongTrinhKhuyenMai)
+  @OneToMany(() => ChuongTrinhKhuyenMaiValueEntity, ctkmvl => ctkmvl.chuongTrinhKhuyenMai, { onDelete: 'CASCADE' })
   chuongTrinhKhuyenMaiValues: ChuongTrinhKhuyenMaiValueEntity[];
 }
