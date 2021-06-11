@@ -14,7 +14,7 @@ export class ChuongTrinhKhuyenMaiValueEntity {
   chuongTrinhKhuyenMaiId: string;
 
   @JoinColumn({ name: 'ChuongTrinhKhuyenMaiId' })
-  @ManyToOne(() => ChuongTrinhKhuyenMaiEntity, ctkm => ctkm.chuongTrinhKhuyenMaiValues)
+  @ManyToOne(() => ChuongTrinhKhuyenMaiEntity, ctkm => ctkm.chuongTrinhKhuyenMaiValues, { onDelete: 'CASCADE' })
   chuongTrinhKhuyenMai: ChuongTrinhKhuyenMaiEntity;
 
   @Column({ type: 'uuid', name: "ProductId" })

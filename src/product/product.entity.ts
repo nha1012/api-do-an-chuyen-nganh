@@ -73,7 +73,7 @@ export class ProductEntity {
   @OneToMany(() => ReviewSanPhamEntity, reviewSanPham => reviewSanPham.product, { cascade: true, onDelete: 'CASCADE' })
   // Review sản phẩm
   reviewSanPhams: ReviewSanPhamEntity[]
-  @OneToMany(() => HaSanPhamEntity, haSanPham => haSanPham.product, { cascade: true, onDelete: 'CASCADE' })
+  @OneToMany(() => ReviewSanPhamEntity, haSanPham => haSanPham.product, { cascade: true, onDelete: 'CASCADE' })
   // Hinh ảnh sản phẩm
   hinhAnhSanPhams: HaSanPhamEntity[]
   @OneToMany(() => OrderEntity, order => order.product, { cascade: true, onDelete: 'CASCADE' })
